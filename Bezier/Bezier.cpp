@@ -27,8 +27,9 @@ void Bezier::update(const sf::Vector2i& mousePos)
 	}
 }
 
-void Bezier::draw(sf::RenderWindow& window) const
-{
+void Bezier::draw(sf::RenderWindow& window)
+{	
+	drawConnections(window);
 	window.draw(&vertices[0], vertices.size(), sf::LineStrip);
 	for (const Point& point : points)
 		window.draw(point.getShape());

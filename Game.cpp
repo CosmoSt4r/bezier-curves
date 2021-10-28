@@ -9,6 +9,13 @@ Game::Game()
 	timePerFrame = sf::seconds(1.f / 60.f);
 	backgroundColor = sf::Color(0, 26, 51);
 
+	QuadraticBezier* curve1 = new QuadraticBezier({
+		sf::Vector2f(10, 10),
+		sf::Vector2f(30, 30),
+		sf::Vector2f(50, 10),
+	});
+	curves.push_back(curve1);
+
 	CubicBezier* curve = new CubicBezier({
 		sf::Vector2f(100, 100),
 		sf::Vector2f(300, 300),
@@ -78,7 +85,7 @@ void Game::update()
 void Game::render()
 {
 	window.clear(backgroundColor);
-	for (const Bezier* curve : curves)
+	for (Bezier* curve : curves)
 		curve->draw(window);
 	window.display();
 }
