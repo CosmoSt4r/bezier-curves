@@ -1,15 +1,17 @@
 #pragma once
 #include <vector>
-#include <math.h>
+#include <cmath>
 
 #include <SFML/Graphics.hpp>
+
+#include "Point.h"
 
 class Bezier
 {
 public:
-	void update();
+	void mouseButtonPressed(bool, const sf::Vector2i&);
+	void update(const sf::Vector2i&);
 	void draw(sf::RenderWindow&) const;
-	void setPoint(const unsigned int&, const sf::Vector2f);
 
 protected:
 	Bezier(const std::vector<sf::Vector2f>& points);
@@ -17,5 +19,5 @@ protected:
 
 protected:
 	std::vector<sf::Vertex> vertices;
-	std::vector<sf::Vector2f> points;
+	std::vector<Point> points;
 };

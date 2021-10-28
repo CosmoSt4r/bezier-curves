@@ -22,5 +22,5 @@ private:
 	sf::Color backgroundColor;
 	sf::Vector2i mousePos;
 
-	CubicBezier curve;
+	std::vector<Bezier*> curves;
 };

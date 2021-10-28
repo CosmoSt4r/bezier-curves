@@ -9,10 +9,10 @@ QuadraticBezier::QuadraticBezier(const std::vector<sf::Vector2f>& points)
 
 void QuadraticBezier::calculate(const float& t, sf::Vector2f& finalPoint)
 {
-	finalPoint.x =  pow(1 - t, 2) * points[0].x +
-					(1 - t) * 2 * t * points[1].x +
-					t * t * points[2].x;
-	finalPoint.y = 	pow(1 - t, 2) * points[0].y +
-					(1 - t) * 2 * t * points[1].y +
-					t * t * points[2].y;
+	finalPoint.x =  pow(1 - t, 2) * points[0].getX() +
+					(1 - t) * 2 * t * points[1].getX() +
+					t * t * points[2].getX();
+	finalPoint.y = 	pow(1 - t, 2) * points[0].getY() +
+					(1 - t) * 2 * t * points[1].getY() +
+					t * t * points[2].getY();
 }
