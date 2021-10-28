@@ -9,6 +9,7 @@ class Bezier
 public:
 	void update();
 	void draw(sf::RenderWindow&) const;
+	void setPoint(const unsigned int&, const sf::Vector2f);
 
 protected:
 	Bezier(const std::vector<sf::Vector2f>& points);

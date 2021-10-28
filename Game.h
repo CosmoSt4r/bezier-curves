@@ -3,8 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "QuadraticBezier.h"
-#include "CubicBezier.h"
+#include "Bezier/QuadraticBezier.h"
+#include "Bezier/CubicBezier.h"
 
 class Game
 {
